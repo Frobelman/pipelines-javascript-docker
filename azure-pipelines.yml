@@ -9,6 +9,8 @@ jobs:
       deploy:
         steps:
         - checkout: self
+        
+        - script: ls
         - task: KubernetesManifest@0
           displayName: Deploy
           inputs:
