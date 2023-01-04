@@ -12,9 +12,10 @@ jobs:
         - task: KubernetesManifest@0
           displayName: Deploy
           inputs:
+            kubernetesServiceConnection: kube-netricity-nl
             action: deploy
             namespace: default
-            manifests: manifests/deployment.yml|manifests/service.yml
+            manifests: manifests/azagent.yaml
             containers: 2atdev.azurecr.io/azp:latest
             imagePullSecrets: acr
 
